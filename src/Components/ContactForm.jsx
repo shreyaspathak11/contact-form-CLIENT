@@ -29,8 +29,11 @@ const ContactForm = () => {
       // Change the URL to match your server endpoint
       await axios.post('http://localhost:5000/send-email', {
         to: formData.email,
-        subject: 'Message from contact form',
-        text: JSON.stringify(formData),
+        subject:  formData.firstName + ' ' + formData.lastName + ': messaged via Contact form ',
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        phoneNumber: formData.phoneNumber,
+        text: formData.message,
       });
 
       // Redirect to the thank you page

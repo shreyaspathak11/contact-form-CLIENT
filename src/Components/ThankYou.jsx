@@ -2,18 +2,19 @@
 import React, { useEffect } from 'react';
 import "./ThankYou.css";
 import thankyou from '../assets/thank-you.png';
+import { useNavigate } from 'react-router-dom';
 
 const ThankYou = () => {
-
+  const navigate = useNavigate();
   useEffect(() => {
     
     const redirectTimeout = setTimeout(() => {
-      window.open('https://port-folio-puce-zeta.vercel.app/');
+      navigate('/');
     }, 5000);
 
     
     return () => clearTimeout(redirectTimeout);
-  });
+  }, [navigate]);
   return (
     <div className='thankyou'>
       <h2>Thank you for your message!</h2>
