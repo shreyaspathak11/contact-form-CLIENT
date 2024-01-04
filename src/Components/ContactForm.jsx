@@ -27,7 +27,7 @@ const ContactForm = () => {
       setLoading(true);
 
       // Change the URL to match your server endpoint
-      await axios.post('http://localhost:5000/send-email', {
+      await axios.post('https://contact-form-server-api.vercel.app/send-email', {
         to: formData.email,
         subject:  formData.firstName + ' ' + formData.lastName + ': messaged via Contact form ',
         firstName: formData.firstName,
