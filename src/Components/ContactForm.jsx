@@ -28,8 +28,8 @@ const ContactForm = () => {
 
       // Change the URL to match your server endpoint
       await axios.post('https://contact-form-server-api.vercel.app/send-email', {
-        to: formData.email,
-        subject:  formData.firstName + ' ' + formData.lastName + ': messaged via Contact form PH NO.:' + formData.phoneNumber ,
+        to: "shreyaspathak.ofc@gmail.com",
+        subject:  formData.firstName + ' ' + formData.lastName + ' messaged via Contact form. ' + "Contact details: " +formData.phoneNumber + ' ' + formData.email,
         text: formData.message,
       });
 
